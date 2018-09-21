@@ -89,7 +89,7 @@ margin: 10px;
 font-weight: 300;
 }
 
-@media only screen and (max-width: 768px){
+@media screen and (max-width: 768px){
     body {
         
         background-repeat: repeat;
@@ -116,11 +116,12 @@ font-weight: 300;
     }
 }
 
-@media only screen and (max-width: 460px){
+@media screen and (max-width: 460px){
+   
     .container {
         width: 80%;
         margin-top: 15px;
-        height: 400px;
+        height: 600px;
     }
 
     h1{
