@@ -1,8 +1,14 @@
-body {
+html {
     background-image: url(../images/beer_background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-repeat: no-repeat;
+}
+
+body {
     line-height: 1.5;
+    
 }
 
 .container {
@@ -37,8 +43,9 @@ h2 {/* timer bar */
     margin: 0 auto;
 }
 
-.answer-section {
-   
+.stats {
+   font-size: 25px;
+   margin-left: 25px;
 }
 
 .answer{
@@ -60,7 +67,7 @@ h2 {/* timer bar */
 
 .button-wrapper {
     position: relative;
-    top: 50px;
+    bottom: -150px;
     margin: 0 auto;
     text-align: center;
 }

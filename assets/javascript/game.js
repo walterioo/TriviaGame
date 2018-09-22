@@ -66,7 +66,7 @@
     var unanswered = 0;
     var currentQuestion, timer, intervalId;
     var counter = 0;
-    var trivia = startTrivia;
+    var trivia = [];
     var totalAnswers = startTrivia.length;
 
     function startTimer() {
@@ -143,12 +143,13 @@
         console.log('counter: '+ counter);
         if (counter === totalAnswers) {
             console.log('Game finished');
-            $('.timer-bar').detach();
+            $('.timer-bar').empty();
             $('h2').detach();
             $('.answer-section').empty();
             $('#start-btn').hide();
             $('.question-section').append('<h2>The trivia is over! Heres is how you did!</h2>');
             let $newDiv = $('<div>');
+            $newDiv.addClass('stats');
             $newDiv.append('<p> Correct Answers: ' + wins + '</p>');
             $newDiv.append('<p> Incorrect Answers: ' + loses + '</p>');
             $newDiv.append('<p> Unaswered: ' + unanswered + '</p>');
@@ -163,7 +164,7 @@
 
 $(document).ready(function () {    
     $('#reset-btn').hide();
-    
+    trivia = startTrivia.slice();
     // EVENT HANDLERS
     $(document).on('click', '.answer', function () {
         console.log('answer click');
@@ -197,9 +198,9 @@ $(document).ready(function () {
         $('.answer-section').empty();
         $('.question-section').empty();
         startTimer();
+        trivia = startTrivia.slice();
         newQuestion();
         counter = 0;
         
-        trivia = startTrivia;
     })
 })
